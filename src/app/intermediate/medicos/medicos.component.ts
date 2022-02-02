@@ -30,6 +30,7 @@ export class MedicosComponent implements OnInit {
             {
             next: (v) => {
               this.medicos.push(v)
+              // console.log('Hello World');
             },
             error : (e) =>{
               this.mensajeError = e

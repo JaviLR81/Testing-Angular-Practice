@@ -8,6 +8,7 @@ describe('Reactive Form Test', () => {
   let component: LoginForm;
 
   beforeEach( () => {
+    
     // Satisfied the constructor
     component = new LoginForm( new FormBuilder() );
   });

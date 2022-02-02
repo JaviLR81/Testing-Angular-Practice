@@ -2,6 +2,7 @@ import { message } from "./string";
 
 
 describe('Pruebas de strings', () => {
+
   it('Should return an string', () => {
       const resp = message('Javi');
 
@@ -14,6 +15,6 @@ describe('Pruebas de strings', () => {
     const name = 'Juan';
     const resp = message(name);
     expect( resp ).toContain(name);
-
   });
+
 });

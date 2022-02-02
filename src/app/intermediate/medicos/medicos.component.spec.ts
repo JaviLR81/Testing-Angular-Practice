@@ -28,6 +28,7 @@ describe('MedicosComponent', () => {
       });
 
       // In tests the ngOnInit is not called for that
+      // We should call manually
       componente.ngOnInit();
 
       expect(componente.medicos.length).toBeGreaterThan(0);
@@ -46,8 +47,8 @@ describe('MedicosComponent', () => {
       expect(espia).toHaveBeenCalled();
     });
 
-    // Checando si el método del servicio es llamado
-    it('Init: Should add new medic to the medics array', () => {
+    // Aquí si nos interesa la respuesta
+    it('Init: Should add a new medic to the medics array', () => {
 
       const medic = {id: 1, name: 'Juan'};
 
@@ -68,7 +69,7 @@ describe('MedicosComponent', () => {
       const miError = 'The medic could not be added';
 
       spyOn(service, 'agregarMedico').and.returnValue(
-        throwError(miError)
+        throwError(() => miError)
       );
 
       componente.agregarMedico();
@@ -106,4 +107,4 @@ describe('MedicosComponent', () => {
       expect(espia).not.toHaveBeenCalledWith('1');
     });
 
-}); 
+});
