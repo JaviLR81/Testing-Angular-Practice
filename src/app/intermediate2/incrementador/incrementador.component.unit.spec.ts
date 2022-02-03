@@ -16,5 +16,4 @@ describe('Incrementador component unit', () => {
     expect(component.progreso).toBe(55);
   })
 
-  
 })

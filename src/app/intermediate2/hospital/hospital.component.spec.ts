@@ -6,6 +6,7 @@ describe('HospitalComponent', () => {
   let component: HospitalComponent;
   let fixture: ComponentFixture<HospitalComponent>;
 
+  //
   beforeEach(async () => {
     // await TestBed.configureTestingModule({
     //   declarations: [ HospitalComponent ]
@@ -26,7 +27,7 @@ describe('HospitalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create and HospitalComponent', () => {
     expect(component).toBeTruthy();
   });
 });

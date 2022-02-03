@@ -23,6 +23,7 @@ describe('Incremendator Component', () => {
         component = fixture.componentInstance;
     });
 
+
     it('Debe mostrar la leyenda', () => {
 
       component.leyenda = 'Progreso de carga';
@@ -62,12 +63,11 @@ describe('Incremendator Component', () => {
       });
     });
 
-    it('Debe de incrementar/decrementar con un click en el boton',() => {
-
+    // Confirmar que los botones tengan los eventos deseados
+    it('Debe de incrementar/decrementar con un (click) en el boton',() => {
 
       const botones = fixture.debugElement
                         .queryAll(By.css('.btn-primary'));
-
       // First button
       botones[0].triggerEventHandler('click',null);
       expect(component.progreso).toBe(45);
@@ -77,7 +77,8 @@ describe('Incremendator Component', () => {
       expect(component.progreso).toBe(50);
     });
 
-    it('En el títulod del componente debe mostrar el progreso',() => {
+    // Verificar cambios en un elemento HTML tras eventos
+    it('En el título del componente debe mostrar el progreso',() => {
 
       const botones = fixture.debugElement
                         .queryAll(By.css('.btn-primary'));
@@ -87,12 +88,13 @@ describe('Incremendator Component', () => {
 
       fixture.detectChanges();
 
+      // Checando que el nuevo progreso se haya renderizado en el HTML
       const elem: HTMLElement =
                   fixture.debugElement
                   .query(By.css('h3')).nativeElement;
 
+      // Como verificamos el html es un string lo que estamos buscando para comparar
       expect(elem.innerHTML).toContain('45');
-
     });
 
 

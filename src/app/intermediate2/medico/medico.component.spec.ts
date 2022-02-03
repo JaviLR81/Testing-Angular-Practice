@@ -4,6 +4,7 @@ import { MedicoComponent } from "./medico.component";
 // Con todo lo que tiene el HTML, el ciclo de detección de cambios
 // La clase TestBed
 // ComponentFixture = Como JQUERY
+
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { MedicoService } from "../medico.service";
 import { HttpClientModule } from "@angular/common/http";
@@ -21,6 +22,8 @@ describe('Medico Component Integration', () => {
     // Solo lo que necesitamos para las pruebas de este componente y su HTML
     TestBed.configureTestingModule({
       declarations: [ MedicoComponent ],
+      // No estoy tan seguro de esto ya que esta proveido en el root el servicio creo que esto es por si queremos segmentar
+      // Los servicios
       providers: [MedicoService],
       imports: [HttpClientModule]
     })
@@ -36,12 +39,12 @@ describe('Medico Component Integration', () => {
 
 
   it('Component Should be created', () => {
-
     expect( component ).toBeTruthy();
   })
 
   it('Should be return the medic name', () => {
 
+    // Con esta prueba vemos que el fixture funciona correctamente
     const name = 'Barak';
     const message =   component.saludarMedico(name);
 
