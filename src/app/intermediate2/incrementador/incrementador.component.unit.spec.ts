@@ -9,7 +9,7 @@ describe('Incrementador component unit', () => {
 
   it('No debe de pasar de 100 el progreso', () => {
 
-    component.progreso = 50;
+    // component.progreso = 50;
 
     component.cambiarValor(5);
 

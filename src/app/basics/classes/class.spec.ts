@@ -6,22 +6,25 @@ describe('Classes test', () =>{
   let player = new Player();
 
   // beforeAll Antes de ejecutar todas 1 vez
-  // beforeEach Después de cada IT
+  // beforeEach Antes de cada IT
 
   // afterAll Todas las pruebas finalizan
-  // afterEach
+  // afterEach Después de cada IT
 
   beforeAll(() => {
     // console.log('beforeAll');
   });
+
   beforeEach(() => {
     // console.log('beforeEach');
     // player.hp = 100;
     player = new Player();
   });
+
   afterAll(() => {
     // console.log('afterAll');
   });
+
   afterEach(() => {
     // console.log('afterEach');
   });

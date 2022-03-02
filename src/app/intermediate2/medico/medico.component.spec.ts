@@ -33,7 +33,7 @@ describe('Medico Component Integration', () => {
 
 
     // Ya tenemos la instancia del componente lista para usar todos sus métodos
-    // Lo que sea que definamos en ese componente
+    // Lo que sea que definamos en ese componente y ya tenemos acceso igualmente al HTML y todo lo demas relacionado con Angular
     component = fixture.componentInstance;
   });
 

@@ -38,6 +38,7 @@ describe('Incremendator Component', () => {
                   fixture.debugElement
                   .query(By.css('h3')).nativeElement;
 
+      // Lo que se encuentra dentron de este elemento
       expect(elem.innerHTML).toContain('Progreso de carga');
     });
 
@@ -45,6 +46,7 @@ describe('Incremendator Component', () => {
 
       component.cambiarValor(5);
 
+      // Esto tiene una duración de ejecución
       fixture.detectChanges();
 
       // Cuando ya termine la detección de cambios
@@ -64,7 +66,7 @@ describe('Incremendator Component', () => {
     });
 
     // Confirmar que los botones tengan los eventos deseados
-    it('Debe de incrementar/decrementar con un (click) en el boton',() => {
+    it('Debe de incrementar/decrementar con 5 con un (click) en el boton',() => {
 
       const botones = fixture.debugElement
                         .queryAll(By.css('.btn-primary'));
@@ -86,6 +88,7 @@ describe('Incremendator Component', () => {
       // First button
       botones[0].triggerEventHandler('click',null);
 
+      // Reenderizando nuevos valores
       fixture.detectChanges();
 
       // Checando que el nuevo progreso se haya renderizado en el HTML

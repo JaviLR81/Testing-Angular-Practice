@@ -9,7 +9,7 @@ describe('MedicosComponent', () => {
 
     // Como son pruebas unitarias no necesitamos data por eso no le pasamos el http
     // const service = new MedicosService(null);
-    let service: any;
+    let service: MedicosService;
 
     beforeEach( () => {
       const spy = jasmine.createSpyObj('HttpClient', { post: of({}), get: of({}) })
@@ -24,7 +24,7 @@ describe('MedicosComponent', () => {
       const medicos = ['Medico1','Medico2','Medico3'];
 
       spyOn( service, 'getMedicos' ).and.callFake( () =>{
-          return from([ medicos ]);
+          return from([ medicos]);
       });
 
       // In tests the ngOnInit is not called for that
@@ -63,6 +63,7 @@ describe('MedicosComponent', () => {
     });
 
 
+    // TESTING AN ERROR IN AN OBSERVABLE
     // Checando que los errores de la aplicación sean controlados de la manera esperada
     it('If fails the adition, the property mensajeError, should be equals to the service error ', () => {
 

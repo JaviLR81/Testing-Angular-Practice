@@ -39,7 +39,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const debugElement = fixture.debugElement.query(By.directive(RouterOutlet));
     expect(debugElement).not.toBeNull();
-  })
+  });
 
 
 
