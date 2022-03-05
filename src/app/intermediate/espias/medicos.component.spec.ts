@@ -14,7 +14,7 @@ describe('MedicosComponent', () => {
     beforeEach( () => {
       const spy = jasmine.createSpyObj('HttpClient', { post: of({}), get: of({}) })
 
-      service = new MedicosService(spy)
+      service = new MedicosService(spy);
       componente = new MedicosComponent(service);
     });
 
@@ -23,7 +23,7 @@ describe('MedicosComponent', () => {
 
       const medicos = ['Medico1','Medico2','Medico3'];
 
-      spyOn( service, 'getMedicos' ).and.callFake( () =>{
+      spyOn( service, 'getMedicos' ).and.callFake( () => {
           return from([ medicos]);
       });
 

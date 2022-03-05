@@ -8,7 +8,7 @@ describe('Reactive Form Test', () => {
   let component: LoginForm;
 
   beforeEach( () => {
-    
+
     // Satisfied the constructor
     component = new LoginForm( new FormBuilder() );
   });
@@ -36,7 +36,6 @@ describe('Reactive Form Test', () => {
     const control = component.form.controls['email'];
     // const control = component.form.get('email');
 
-    // Breaking the required condition
     control.setValue('javie@ail.com');
     expect(control.valid).toBeTruthy();
 
