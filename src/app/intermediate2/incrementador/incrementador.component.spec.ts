@@ -26,6 +26,8 @@ describe('Incremendator Component', () => {
 
     it('Debe mostrar la leyenda', () => {
 
+      // Por defecto cuando se declara una variable siempre es undefined
+      // en las pruebas aunque tenga un valor de asignación
       component.leyenda = 'Progreso de carga';
 
       // Disparar la detección de cambios
@@ -38,7 +40,8 @@ describe('Incremendator Component', () => {
                   fixture.debugElement
                   .query(By.css('h3')).nativeElement;
 
-      // Lo que se encuentra dentron de este elemento
+      // Lo que se encuentra dentro de este elemento h3 contenga
+      // Evaluando el contenido interno
       expect(elem.innerHTML).toContain('Progreso de carga');
     });
 

@@ -6,7 +6,8 @@ describe('HospitalComponent', () => {
   let component: HospitalComponent;
   let fixture: ComponentFixture<HospitalComponent>;
 
-  //
+  // Esperar hasta que la función se resuelva
+  // Ya no es necesario por webpack
   beforeEach(async () => {
     // await TestBed.configureTestingModule({
     //   declarations: [ HospitalComponent ]

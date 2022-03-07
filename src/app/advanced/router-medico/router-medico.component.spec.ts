@@ -40,6 +40,7 @@ describe('RouterMedicoComponent', () => {
       // Necesitamos importarlos por que estan siendo usados por el componente
       // Por eso debemos de importarlos aquí
       providers: [
+        // Substituyendo la clase normal por una Custom
         // Router,
         { provide: Router, useClass: FakeRouter },
         // ActivatedRoute

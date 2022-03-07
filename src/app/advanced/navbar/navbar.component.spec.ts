@@ -28,7 +28,7 @@ describe('NavbarComponent', () => {
   });
 
 
-  it('Debe de tener un link a la página de medicos', () =>{
+  it('Debe de tener un link a la página de medicos', () => {
 
     //No olvidarse de importar el módulo de testing module
     const elements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));

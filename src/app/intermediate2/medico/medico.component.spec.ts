@@ -29,11 +29,14 @@ describe('Medico Component Integration', () => {
     })
 
     // Crear componente compilado y procesado por TestBed
+    // Con la clase Testbed lo preparamos para que pueda usar pipes,detección de cambios
+    // y en general todo lo relacionado con Angular fuera del componente
     fixture = TestBed.createComponent( MedicoComponent );
 
 
     // Ya tenemos la instancia del componente lista para usar todos sus métodos
-    // Lo que sea que definamos en ese componente y ya tenemos acceso igualmente al HTML y todo lo demas relacionado con Angular
+    // Lo que sea que definamos en ese componente y ya tenemos acceso
+    // igualmente al HTML,DOM y todo lo demas relacionado con Angular
     component = fixture.componentInstance;
   });
 
