@@ -36,6 +36,8 @@ describe('Incremendator Component', () => {
       // Obteniendo el elemento HTML del fixture
       // que es el elemento compilado de Angular
       // query() Retorna solo 1 elemento y solo el primero que encuentre
+      // import {By} from @angular/platform-browser
+      // cualquier elemento h3
       const elem: HTMLElement =
                   fixture.debugElement
                   .query(By.css('h3')).nativeElement;
@@ -45,6 +47,9 @@ describe('Incremendator Component', () => {
       expect(elem.innerHTML).toContain('Progreso de carga');
     });
 
+    // El parametro done se agrega debido al comportamiento asincrono del
+    // whenStable() desde mi punto de vista es para hacerlo sincrono
+    // también se puede ustilizar la función async() =>
     it('Debe de mostrar en el input el valor del progreso',(done) => {
 
       component.cambiarValor(5);
@@ -55,6 +60,7 @@ describe('Incremendator Component', () => {
       // Cuando ya termine la detección de cambios
       // Y se encuentre lista para ser evaluada
       fixture.whenStable().then( () => {
+
         const input = fixture.debugElement
                       .query(By.css('input'));
 
@@ -67,6 +73,20 @@ describe('Incremendator Component', () => {
         done();
       });
     });
+
+    // También se puede usar la utilidad async para ejecutar
+    // el test en una async test zone.
+
+    // it('Debe mostrar en el input el valor del progreso', async(() => {
+    //   component.cambiarValor(5);
+    //   fixture.detectChanges();
+    //   fixture.whenStable().then(() => {
+    //     const elem: HTMLInputElement = fixture.debugElement.query(By.css('input')).nativeElement;
+    //     expect(elem.valueAsNumber).toBe(55);
+    //   });
+    // }));
+
+
 
     // Confirmar que los botones tengan los eventos deseados
     it('Debe de incrementar/decrementar con 5 con un (click) en el boton',() => {
@@ -82,7 +102,7 @@ describe('Incremendator Component', () => {
       expect(component.progreso).toBe(50);
     });
 
-    // Verificar cambios en un elemento HTML tras eventos
+    // Verificar cambios en un elemento HTML tras eventos del tipo click
     it('En el título del componente debe mostrar el progreso',() => {
 
       const botones = fixture.debugElement

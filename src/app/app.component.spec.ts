@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
 import { RouterLink, RouterLinkWithHref, RouterOutlet } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { NavbarComponent } from './advanced/navbar/navbar.component';
 
 describe('AppComponent', () => {
 
@@ -15,7 +14,6 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        // NavbarComponent
       ],
       // Ignorar cualquier directiva o componente que no conozca
       // En este caso ignorará el app-navbar
@@ -44,21 +42,23 @@ describe('AppComponent', () => {
     expect(debugElement).not.toBeNull();
   });
 
-  // TODO: No funciona de momento, buscar error
-  // it('Debe de tenr un link a la página /medicos', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
 
-  //   let existe = false;
+  /*
+  it('Debe de tenr un link a la página /medicos', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
 
-  //   for( const element of debugElements) {
-  //     if(element.attributes['routerLink'] === '/medicos'){
-  //       existe = true;
-  //       break;
-  //     }
-  //   }
-  //   expect(existe).toBeTruthy();
-  // });
+    let existe = false;
+
+    for( const element of debugElements) {
+      if(element.attributes['routerLink'] === '/medicos'){
+        existe = true;
+        break;
+      }
+    }
+    expect(existe).toBeTruthy();
+  });
+  */
 
 
   // Errores por selectores desconocidos

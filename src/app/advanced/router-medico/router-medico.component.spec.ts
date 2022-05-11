@@ -12,16 +12,19 @@ class FakeRouter {
 }
 
 class FakeActivatedRoute {
+
   // Simulando la propiedad
   // params: Observable<any> = EMPTY;
 
   // Nos permite insertar valores a un observable
   private subject = new Subject();
 
+  // Insertandole el nuevo valor
   push(value: any){
     this.subject.next( value );
   }
 
+  // Regresandol como un observable
   get params(){
     return this.subject.asObservable();
   }
@@ -34,8 +37,6 @@ describe('RouterMedicoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ RouterMedicoComponent ],
-
-      // imports: [RouterTestingModule],
 
       // Necesitamos importarlos por que estan siendo usados por el componente
       // Por eso debemos de importarlos aquí
@@ -68,6 +69,7 @@ describe('RouterMedicoComponent', () => {
 
   // Reemplazar servicios de angular por servicios falsos
   it('Debe de redireccionar a medico cuando se guarde', () => {
+    // Indicando con Testbed que esta clase de los providers se incluya se inyecte
     const router = TestBed.inject(Router);
     const spy = spyOn( router, 'navigate' );
 
@@ -81,8 +83,14 @@ describe('RouterMedicoComponent', () => {
   it('Debe de colocar el id = nuevo', () => {
     component = fixture.componentInstance;
 
+    // Se inyecta con Testbed el AcivatedRute y se le agrega el valor al observable
     // const activatedRoute: FakeActivatedRoute = TestBed.inject(ActivatedRoute);
     // activatedRoute.push({id: 'nuevo'});
+
+    // Other solution
+    // const activatedRoute = TestBed.inject(ActivatedRoute);
+    // (<FakeActivatedRoute>(<any>activatedRoute)).push({id: 'nuevo'});
+
     TestBed.inject(ActivatedRoute)
 
     expect(component.id).toBe('nuevo');

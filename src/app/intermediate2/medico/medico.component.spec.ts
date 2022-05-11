@@ -22,9 +22,9 @@ describe('Medico Component Integration', () => {
     // Solo lo que necesitamos para las pruebas de este componente y su HTML
     TestBed.configureTestingModule({
       declarations: [ MedicoComponent ],
-      // No estoy tan seguro de esto ya que esta proveido en el root el servicio creo que esto es por si queremos segmentar
-      // Los servicios
+      // Inyectando una dependencia
       providers: [MedicoService],
+      // Inyetctando una dependencia del servicio
       imports: [HttpClientModule]
     })
 
